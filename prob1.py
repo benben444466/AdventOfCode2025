@@ -19,7 +19,4 @@ for line in lines:
 
 print("result is: ", len(when_left_on_zero))
 
-
-
-
-    
+# Write Test Suite here
