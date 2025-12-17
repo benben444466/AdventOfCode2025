@@ -10,13 +10,19 @@ current = START_POINT
 for line in lines:
     direction = line[0]
     number = int(''.join(i for i in line if i.isdigit()))
-    print(direction, number)
+    #print(direction, number)
     if direction == 'R':
-        if current 
-        current = (current + number) % 100
+        if current + number > 99:
+            current = (current + number) % 100
+            when_left_on_zero.append((line, current))
+        else:
+            current = (current + number) % 100
     elif direction == 'L':
-        current = (current - number) % 100 
-    when_left_on_zero.append((line, current))
+        if current - number < 0:
+            current = (current - number) % 100 
+            when_left_on_zero.append((line, current))
+        else:
+            current = (current - number) % 100
 
 print(when_left_on_zero)
 print("result is: ", len(when_left_on_zero))
