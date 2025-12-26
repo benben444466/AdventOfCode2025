@@ -13,14 +13,16 @@ for line in lines:
     #print(direction, number)
     if direction == 'R':
         if current + number > 99:
-            current = (current + number) % 100
             when_left_on_zero.append((line, current))
+            current = (current + number) % 100
         else:
             current = (current + number) % 100
     elif direction == 'L':
-        if current - number < 0:
-            current = (current - number) % 100 
+        if current == 0:
+            
+        elif current - number <= 0:
             when_left_on_zero.append((line, current))
+            current = (current - number) % 100 
         else:
             current = (current - number) % 100
 
